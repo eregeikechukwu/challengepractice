@@ -1,0 +1,32 @@
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+
+
+}
+html{
+    box-sizing: border-box;
+    font-size: 93.65%;//15px
+
+
+    @media only screen and (max-width:$bp-large){
+        font-size: 180%;
+     }
+
+}
+
+body{
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    //padding-bottom: 30rem;
+      
+   /* @media only screen and (max-width:$bp-large){
+        padding: 1rem;
+     }*/
+
+}

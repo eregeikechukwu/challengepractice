@@ -1,0 +1,195 @@
+.menu{
+    //display: none;
+    //width: 0;
+    @media only screen and (max-width:$bp-large){
+        display: inline;
+        width: 100%;
+     }
+
+&__checkbox {
+   display: none;
+}
+
+&__button {
+    height: 5rem;
+    width: 5rem;
+    position:absolute;
+    right: 1rem;
+    top: 0;
+    border-radius: 50%;
+    z-index: 2000;
+    cursor: pointer;
+  
+}
+
+&__background {
+    height: 100vh;
+    width: 0;
+    position: fixed;
+    top: 1.5%;
+    right: -75%;
+    background-color:$dark-grayish-blue;
+    z-index: 1000;
+    transform: translateX(90rem);
+    transition: transform .8s cubic-bezier(0.83, 0, 0.17, 1)  ;
+
+}
+
+
+&__list {
+    position: absolute;
+    top: 50%;
+    right: -66%;
+    transform: translate(-50%, -50%);
+   // text-align: center;
+    width: 100%;
+    padding: 2rem;
+    list-style: none;
+    color: white;
+    font-size: 2rem;
+
+
+       
+    @media only screen and (max-width:$bp-large){
+        font-size: 1rem;
+     }
+
+    
+&__item {
+    margin: 1rem;
+    position: relative !important;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    z-index: 1200;
+
+    &:hover::before{
+        transform: scaleY(1);
+        width: 40%;
+    }
+
+    &::before{
+        position: absolute;
+        content:"";
+        bottom: 0;
+        left:-1.5rem;
+        top: 0; 
+        bottom: 0;
+        height: 100%;       
+        width: 1rem;
+        transform: scaleY(0);
+        z-index: -5;
+        transition: transform 1s, width .2s 1s;
+        background-color: rgb(67, 62, 62);
+    }
+    &:hover{
+        animation: shake .4s ;
+    }
+
+}
+
+@keyframes shake{
+    0%{
+        transform: translateX(0);
+    } 
+    25%{
+        transform: translateX(2rem);
+    } 
+    50%{
+        transform: translateX(-2rem);
+    } 
+    75%{
+        transform: translateX(2rem);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+}
+
+
+//FUNCTIONALITY
+
+&__checkbox:checked ~ &__background {
+    transform: translateX(34%);
+    right: 6.5%;
+    width: 100vh;
+
+
+       
+    @media only screen and (max-width:$bp-large){
+        transform: translateX(17rem);
+     }
+}
+
+&__checkbox:checked ~ &__nav {
+    opacity: 1;
+    width: 100%;
+}
+
+//ICON
+&__icon {
+    position: relative;
+    margin-top: 3.5rem;
+    color: black;
+
+    &:active{
+        position: fixed;
+    }
+    &,
+    &::before,
+    &::after {
+        width: 3rem;
+        height: 4px;
+      background-color: black;
+        display: inline-block;
+    }
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        transition: all .2s ;
+    }
+
+    &::before { top: -.8rem; }
+    &::after { top: .8rem; }
+}
+
+&__button:hover &__icon::before {
+    top: -1rem;
+}
+
+&__button:hover &__icon::after {
+    top: 1rem;
+}
+
+&__checkbox:checked + &__button &__icon {
+    background-color: transparent;
+    position: fixed;
+    right: 21%;
+    top: 8%;
+
+        
+    @media only screen and (max-width:$bp-large){
+        position: fixed;
+        right: 9%;
+        top: 2%;    
+    }
+}
+
+&__checkbox:checked + &__button &__icon::before {
+    top: 0;
+    background-color: white;
+    transform: rotate(135deg);
+}
+
+&__checkbox:checked + &__button &__icon::after {
+    background-color: white;
+    top: 0;
+    transform: rotate(-135deg);
+}
+
+}
