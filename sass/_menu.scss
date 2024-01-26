@@ -14,7 +14,7 @@
     height: 5rem;
     width: 5rem;
     position:absolute;
-    right: 1rem;
+    right: -1rem;
     top: 0;
     border-radius: 50%;
     z-index: 2000;
@@ -169,7 +169,7 @@
 &__checkbox:checked + &__button &__icon {
     background-color: transparent;
     position: fixed;
-    right: 21%;
+    right: 20%;
     top: 8%;
 
         
