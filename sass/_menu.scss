@@ -1,6 +1,6 @@
 .menu{
-    //display: none;
-    //width: 0;
+    display: none;
+    width: 0;
     @media only screen and (max-width:$bp-large){
         display: inline;
         width: 100%;
@@ -15,7 +15,7 @@
     width: 5rem;
     position:absolute;
     right: -1.5rem;  
-    top: 0;
+    top: -23px;
     border-radius: 50%;
     z-index: 2000;
     cursor: pointer;
@@ -23,15 +23,20 @@
 }
 
 &__background {
-    height: 100vh;
+    height: 100%;
     width: 0;
     position: fixed;
     top: 1.5%;
     right: -75%;
-    background-color:$dark-grayish-blue;
+    background-color:white;
     z-index: 1000;
     transform: translateX(90rem);
-    transition: transform .8s cubic-bezier(0.83, 0, 0.17, 1)  ;
+    transition: transform .8s cubic-bezier(0.83, 0, 0.17, 1), width .5s;
+
+    @media only screen and (max-width:$bp-large){
+    top: 0;
+        right: 0;
+    }
 
 }
 
@@ -39,18 +44,20 @@
 &__list {
     position: absolute;
     top: 50%;
-    right: -56%;
+    right: -36%;
     transform: translate(-50%, -50%);
    // text-align: center;
     width: 100%;
     padding: 2rem;
     list-style: none;
-    color: white;
+    color: black;
     font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-
-       
     @media only screen and (max-width:$bp-large){
+        right: -55%;
         font-size: 1rem;
      }
 
@@ -59,8 +66,6 @@
     margin: 1rem;
     position: relative !important;
     cursor: pointer;
-    display: flex;
-    align-items: center;
     z-index: 1200;
 
     &:hover::before{
@@ -68,20 +73,6 @@
         width: 40%;
     }
 
-    &::before{
-        position: absolute;
-        content:"";
-        bottom: 0;
-        left:-1.5rem;
-        top: 0; 
-        bottom: 0;
-        height: 100%;       
-        width: 1rem;
-        transform: scaleY(0);
-        z-index: -5;
-        transition: transform 1s, width .2s 1s;
-        background-color: rgb(67, 62, 62);
-    }
     &:hover{
         animation: shake .4s ;
     }
@@ -112,15 +103,8 @@
 //FUNCTIONALITY
 
 &__checkbox:checked ~ &__background {
-    transform: translateX(34%);
-    right: 6.5%;
-    width: 100vh;
-
-
-       
-    @media only screen and (max-width:$bp-large){
-        transform: translateX(17rem);
-     }
+    width: 120%;
+    transform: translateX(1.6rem);
 }
 
 &__checkbox:checked ~ &__nav {
@@ -133,6 +117,7 @@
     position: relative;
     margin-top: 3.5rem;
     color: black;
+    border-radius: 6px;
 
     &:active{
         position: fixed;
@@ -143,7 +128,8 @@
         width: 3rem;
         height: 4px;
       background-color: black;
-        display: inline-block;
+    border-radius:6px;
+    display: inline-block;
     }
 
     &::before,
@@ -167,9 +153,9 @@
 }
 
 &__checkbox:checked + &__button &__icon {
-    background-color: transparent;
     position: fixed;
     right: 20%;
+    background-color: transparent;
     top: 8%;
 
         
@@ -182,12 +168,10 @@
 
 &__checkbox:checked + &__button &__icon::before {
     top: 0;
-    background-color: white;
     transform: rotate(135deg);
 }
 
 &__checkbox:checked + &__button &__icon::after {
-    background-color: white;
     top: 0;
     transform: rotate(-135deg);
 }
