@@ -107,7 +107,7 @@
 }
 .content__h2 {
   font-size: 1rem;
-  margin-bottom: 2%;
+  padding: 5% 0;
 }
 .content__text {
   color: hsl(233, 8%, 79%);
