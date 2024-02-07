@@ -253,6 +253,7 @@ html {
 @media only screen and (max-width: 62.5em) {
   html {
     font-size: 100%;
+    overflow-x: hidden;
   }
 }
 
@@ -261,6 +262,7 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 3rem;
+  overflow-x: hidden;
 }
 @media only screen and (max-width: 62.5em) {
   body {
