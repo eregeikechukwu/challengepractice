@@ -264,6 +264,7 @@ body {
 @media only screen and (max-width: 62.5em) {
   body {
     padding: 0;
+    padding-bottom: 2rem;
   }
 }
 
@@ -329,13 +330,8 @@ body {
 }
 .menu__list__item {
   margin: 1rem;
-  position: relative !important;
   cursor: pointer;
   z-index: 1200;
-}
-.menu__list__item:hover::before {
-  transform: scaleY(1);
-  width: 40%;
 }
 .menu__list__item:hover {
   animation: shake 0.4s;
@@ -409,7 +405,7 @@ body {
   .menu__checkbox:checked + .menu__button .menu__icon {
     position: fixed;
     right: 9%;
-    top: 2%;
+    top: -1.5%;
   }
 }
 .menu__checkbox:checked + .menu__button .menu__icon::before {

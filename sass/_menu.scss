@@ -64,14 +64,8 @@
     
 &__item {
     margin: 1rem;
-    position: relative !important;
     cursor: pointer;
     z-index: 1200;
-
-    &:hover::before{
-        transform: scaleY(1);
-        width: 40%;
-    }
 
     &:hover{
         animation: shake .4s ;
@@ -162,7 +156,7 @@
     @media only screen and (max-width:$bp-large){
         position: fixed;
         right: 9%;
-        top: 2%;    
+        top: -1.5%;    
     }
 }
 
