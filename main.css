@@ -248,6 +248,7 @@
 html {
   box-sizing: border-box;
   font-size: 93.65%;
+  overflow-x: hidden;
 }
 @media only screen and (max-width: 62.5em) {
   html {
